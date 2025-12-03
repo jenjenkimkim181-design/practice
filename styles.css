@@ -1,0 +1,264 @@
+/* Reset / Base Styles */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background: #fef7f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Header Styles */
+.header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #e85d75;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  color: #4a4a4a;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: #fef7f0;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #2c2c2c;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: #2c2c2c;
+}
+
+.cta-button {
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  background: #e85d75;
+  color: #ffffff;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Products Section */
+.products-section {
+  padding: 5rem 2rem;
+  background: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0 0 3rem 0;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  color: #2c2c2c;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-icon img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.product-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Features Section */
+.features-section {
+  padding: 5rem 2rem;
+  background: #fef7f0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  text-align: center;
+  color: #2c2c2c;
+}
+
+.feature-item h4 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Contact Form */
+.contact-form {
+  margin-top: 3rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #e85d75;
+  color: white;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #c2435d;
+}
+
+/* Footer */
+.footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #ffffff;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
+  color: #2c2c2c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
