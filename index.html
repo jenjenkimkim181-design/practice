@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Product Showcase</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="logo" id="logo">BeautyGlow</div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#products" id="nav-products">Products</a></li>
+        <li><a href="#features" id="nav-features">Features</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 id="hero-headline">Discover Your Natural Radiance</h1>
+      <p id="hero-subtext">Premium beauty products designed to nourish, protect, and enhance your skin's natural beauty</p>
+      <button class="cta-button" id="cta-button">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+    <h2 class="section-title" id="product-title">Our Signature Products</h2>
+    <div class="products-grid">
+
+      <div class="product-card" id="product-1">
+        <div class="product-icon">
+          <img src="1.jpg" alt="Lip Therapy Product Image">
+        </div>
+        <h3>Lip Therapy</h3>
+        <p>Nourishing lip balm for soft, smooth, and healthy-looking lips</p>
+      </div>
+
+      <div class="product-card" id="product-2">
+        <div class="product-icon">
+          <img src="2.jpg" alt="Intensive Care Lotion Product Image">
+        </div>
+        <h3>Intensive Care Lotion</h3>
+        <p>Deep moisturizing formula with micro-droplets of Vaseline jelly</p>
+      </div>
+
+      <div class="product-card" id="product-3">
+        <div class="product-icon">
+          <img src="3.jpg" alt="Aloe Soothing Gel Lotion Image">
+        </div>
+        <h3>Aloe Soothing Gel Lotion</h3>
+        <p>Soothing gel enriched with aloe vera for instant skin relief</p>
+      </div>
+
+      <div class="product-card" id="product-4">
+        <div class="product-icon">
+          <img src="4.jpg" alt="Classic Petroleum Jelly Image">
+        </div>
+        <h3>Classic Petroleum Jelly</h3>
+        <p>Original healing jelly that locks in moisture and helps heal dry, cracked skin</p>
+      </div>
+
+      <div class="product-card" id="product-5">
+        <div class="product-icon">
+          <img src="7.jpg" alt="Sun Protection Image">
+        </div>
+        <h3>Sun Protection</h3>
+        <p>Daily SPF moisturizer to protect and hydrate your skin</p>
+      </div>
+
+      <div class="product-card" id="product-6">
+        <div class="product-icon">
+          <img src="6.jpg" alt="Night Repair Image">
+        </div>
+        <h3>Night Repair</h3>
+        <p>Overnight treatment to restore and rejuvenate while you sleep</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="features-grid">
+      <div class="feature-item">
+        <h4>Dermatologist Tested</h4>
+        <p>Clinically proven formulas trusted by skin experts worldwide</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>Natural Ingredients</h4>
+        <p>Made with carefully selected natural and nourishing components</p>
+      </div>
+
+      <div class="feature-item">
+        <h4>Sustainable</h4>
+        <p>Committed to eco-friendly practices and recyclable packaging</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <div class="contact-form" id="contact">
+      <h2 class="contact-title">Send Us a Message</h2>
+		
+      <form class="card" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <p id="footer-text">© 2024 BeautyGlow. Bringing out your natural beauty, one product at a time.</p>
+  </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".dropdown-toggle");
+  const dropdown = document.querySelector(".dropdown");
+
+  if (toggle && dropdown) {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", () => {
+      dropdown.style.display = "none";
+    });
+  }
+});
+
+emailjs.init("dlRoBC__Y-J_hO-K8");
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value,
+        company: "University of Rizal System"
+    };
+    emailjs.send("service_1l98iea", "template_43bu7tf", formData)
+        .then(() => {
+            alert("Your message has been sent!");
+            this.reset();
+        })
+        .catch((error) => {
+            console.error("EmailJS error:", error);
+            alert("Failed to send message. Check console for details.");
+        });
+});
+</script>
+
+</body>
+</html>
